@@ -2,6 +2,7 @@
 import time
 import random
 
+### ten mój wstęp trzeba będzie usunąć
 zestaw_pytan = ['0.W którym z miast znajdują się korty Flushing Meadows?',
 '1.Co jest głównym składnikiem maści ichtiolowej?',
  '2.Który król założył obok Krakowa miasta Kazimierz i Kleparz']
