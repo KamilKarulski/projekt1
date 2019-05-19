@@ -2,13 +2,6 @@
 import time
 import random
 
-money1 = '1000'
-money2 = '5000'
-money3 = '10000'
-money4 = '40000'
-money5 = '75000'
-money6 = '100000'
-mozliwe_odp = ['a', 'b', 'c', 'd']
 ilosc_kol = 3
 prawdopodobien = random.random()
 p = round(prawdopodobien,2)
