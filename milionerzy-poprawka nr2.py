@@ -81,7 +81,7 @@ zestaw_pytan_3 = [['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogat
 ###lista kolejych wygranych
 lista_wygrane = ['500','1 000','2 000','5 000','10 000','20 000','40 000','75 000','125 000','250 000','500 000','1 000 000']
 
-ilosc_pytan = 1
+ilosc_pytan = 0 #ilość pytań na które gracz do tej pory odpowiedzial, na poczatku musi byc 0
 while True:
     if ilosc_pytan < 4:
         wylosowane_pytanie = random.choice(zestaw_pytan_1) #dopóki gracz nie odpowiedział poprawie na 4 pierwsze pytania losuje z pierwszego zestawu
