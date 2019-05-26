@@ -29,7 +29,8 @@ print('Przedstawię szybko zasady rozgrywki:')
 time.sleep(1)
 print('Wszystkie pytania mają 4 możliwe odpowiedzi - A, B, C, D.')
 time.sleep(2)
-print('W razie zwątpienia, do Twojej dyspozycji są 3 koła ratunkowe:',kolo_ratunkowe[0], kolo_ratunkowe[1], kolo_ratunkowe[2])
+print('W razie zwątpienia, do Twojej dyspozycji są 3 koła ratunkowe:')
+print(kolo_ratunkowe[0], kolo_ratunkowe[1], kolo_ratunkowe[2])
 print(colored('          0\              o   O   o            -------  ','green'))
 print(colored('           ))            /|\ /|\ /|\         ( 50 : 50 )','green'))
 print(colored('          0/                 / \               -------  ','green'))
@@ -93,12 +94,15 @@ ilosc_pytan = 0 #ilość pytań na które gracz do tej pory odpowiedzial, na poc
 
 while True:
     if ilosc_pytan <4:
+        print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_1) #dopóki gracz nie odpowiedział poprawnie na 4 pierwsze pytania losuje z pierwszego zestawu
         zestaw_pytan_1.remove(wylosowane_pytanie)
     elif ilosc_pytan >4 and ilosc_pytan <8:
+        print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_2) #kiedy gracz odpowiedział poprawnie na 4 pierwsze pytania losuje z drugiegoo zestawu
         zestaw_pytan_2.remove(wylosowane_pytanie)
     elif  ilosc_pytan >8 and ilosc_pytan <=12:
+        print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_3)
         zestaw_pytan_3.remove(wylosowane_pytanie)
         if ilosc_pytan == 12:
@@ -118,7 +122,7 @@ while True:
                 print('\nDzwonimy do Twojego przyjaciela.')
                 print('H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź',wylosowane_pytanie[5],'i jestem tego pewny na', p2,'%. Mogę się jednak mylić...\n')
                 kolo_ratunkowe.remove('1. Telefon do przyjaciela')
-            elif kto   re_kolo == '2':
+            elif ktore_kolo == '2':
                 print('\nProszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:')
                 A = random.randint(5,95)
                 B = random.randint(5,95)
@@ -161,8 +165,8 @@ while True:
                 print('\nProszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:',wylosowane_pytanie[5],'i',random.choice(odp))
                 print()
                 kolo_ratunkowe.remove('3. 50:50')
-        ilosc_kol -= 1
-        print('Pamiętaj - ilość pozostałych kół ratunkowych to:', ilosc_kol)    
+            ilosc_kol -= 1
+            print('Pamiętaj - ilość pozostałych kół ratunkowych to:', ilosc_kol)    
     time.sleep(1)
     print(random.choice(jakaodpowiedz))
 
@@ -172,18 +176,17 @@ while True:
     if odpowiedz1 == wylosowane_pytanie[5]: #jeśli odp jest taka sama jak ostatni element listy(czyli poprawna odp)
         print(random.choice(poprawna),'Twoja wygrana to',wygrana,'złotych.')
         if wygrana == '5 000' or wygrana == '75 000':
-            print("\nKwota, którą właśnie wygrałeś to kwota gwarantowana.\nOznacza to, że nawet w przypadku przegranej, będziesz mógł zabrać te pieniądze do domu.")
+            print(colored("\nKwota, którą właśnie wygrałeś to kwota gwarantowana.\nOznacza to, że nawet w przypadku przegranej, będziesz mógł zabrać te pieniądze do domu.",'blue'))
         print()
         time.sleep(1)
         lista_wygrane.remove(wygrana) #usuwamy z listy z sianem pierwszy element, aby nastepnym razem pokazywalo kolejna wygraną
         ilosc_pytan = ilosc_pytan+1 #dodaje jeden aby python wiedzial ze juz na jedno pytanie byla udzieelona odp, kiedy dojdzie do 4 a potem do 8 bd losowalo z kolejnych list
-        print(random.choice(prowadzacy),"\n")
+        
     else:
         print("Niestety, odpowiedź której udzieliłeś była niewłaściwa. Poprawna odpowiedź to",wylosowane_pytanie[5])
-        if ilosc_pytan>3:
+        if ilosc_pytan>3 and ilosc_pytan<8:
             print("Niemniej jednak, ponieważ dotarłeś do progu kwoty gwarantowanej, twoja wygrana wynosi",gwarantowana[0],", więc nie wychodzisz z pustymi rękami! Gratuluję!")
-        elif ilosc_pytan>7:
-            print("Niemniej jednak, ponieważ dotarłeś do progu kwoty gwarantowanej, twoja wygrana wynosi",gwarantowana[1],", więc nie wychodzisz z pustymi rękami! Gratuluję!")
         else:
-            print("Dziękujemy za udział w grze!")
+            print("Niemniej jednak, ponieważ dotarłeś do progu kwoty gwarantowanej, twoja wygrana wynosi",gwarantowana[1],", więc nie wychodzisz z pustymi rękami! Gratuluję!")
+        print("Dziękujemy za udział w grze!")
         break
