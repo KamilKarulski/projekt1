@@ -107,59 +107,60 @@ while True:
     print(wylosowane_pytanie[0]) #numer listy zagnieżdzonej wybrany, 1 element ponieważ chcemy wyświetlić tylko pytanie
     print(wylosowane_pytanie[1],wylosowane_pytanie[2],wylosowane_pytanie[3],wylosowane_pytanie[4]) #teraz wyswietlamy odpowiedzi
     wygrana = lista_wygrane[0] # pierwszy element w liscie z sianem xd
-    print(czy_chce_kolo_ratunkowe)
-    odp_na_kolo_ratunkowe = str(input())
-    if odp_na_kolo_ratunkowe == 'q':
-        print('Zdecydowałeś się na koło ratunkowe. Z którego koła chcesz skorzystać?\nAby wybrać, wciśnij odpowiednią cyfrę.')
-        print('Dostępne koła ratunkowe:',kolo_ratunkowe)
-        ktore_kolo = str(input())
-        if ktore_kolo == '1':
-            print('\nDzwonimy do Twojego przyjaciela.')
-            print('H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź',wylosowane_pytanie[5],'i jestem tego pewny na', p2,'%. Mogę się jednak mylić...\n')
-            kolo_ratunkowe.remove('1. Telefon do przyjaciela')
-        elif ktore_kolo == '2':
-            print('\nProszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:')
-            A = random.randint(5,95)
-            B = random.randint(5,95)
-            C = random.randint(5,95)
-            D = random.randint(5,95)
-            while (A+B+C+D)!=100:
+    if len(kolo_ratunkowe)>0:
+        print(czy_chce_kolo_ratunkowe)
+        odp_na_kolo_ratunkowe = str(input())
+        if odp_na_kolo_ratunkowe == 'q':
+            print('Zdecydowałeś się na koło ratunkowe. Z którego koła chcesz skorzystać?\nAby wybrać, wciśnij odpowiednią cyfrę.')
+            print('Dostępne koła ratunkowe:',kolo_ratunkowe)
+            ktore_kolo = str(input())
+            if ktore_kolo == '1':
+                print('\nDzwonimy do Twojego przyjaciela.')
+                print('H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź',wylosowane_pytanie[5],'i jestem tego pewny na', p2,'%. Mogę się jednak mylić...\n')
+                kolo_ratunkowe.remove('1. Telefon do przyjaciela')
+            elif kto   re_kolo == '2':
+                print('\nProszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:')
                 A = random.randint(5,95)
                 B = random.randint(5,95)
                 C = random.randint(5,95)
                 D = random.randint(5,95)
-                if wylosowane_pytanie[5]=='A':
-                    while A<=B or A<=C or A<=D:
-                        A = random.randint(5,95)
-                        B = random.randint(5,95)
-                        C = random.randint(5,95)
-                        D = random.randint(5,95)
-                elif wylosowane_pytanie[5]=='B':
-                    while B<=A or B<=C or B<=D:
-                        A = random.randint(5,95)
-                        B = random.randint(5,95)
-                        C = random.randint(5,95)
-                        D = random.randint(5,95)
-                elif wylosowane_pytanie[5]=='C':
-                    while C<=B or C<=A or C<=D:
-                        A = random.randint(5,95)
-                        B = random.randint(5,95)
-                        C = random.randint(5,95)
-                        D = random.randint(5,95)
-                elif wylosowane_pytanie[5]=='D':
-                    while D<=B or D<=C or D<=A:
-                        A = random.randint(5,95)
-                        B = random.randint(5,95)
-                        C = random.randint(5,95)
-                        D = random.randint(5,95)
-            print(A, B, C, D)
-            kolo_ratunkowe.remove('2. Pytanie do publiczności')
-        elif ktore_kolo == '3':
-            if wylosowane_pytanie[5] in odp:
-                odp.remove(wylosowane_pytanie[5])
-            print('\nProszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:',wylosowane_pytanie[5],'i',random.choice(odp))
-            print()
-            kolo_ratunkowe.remove('3. 50:50')
+                while (A+B+C+D)!=100:
+                    A = random.randint(5,95)
+                    B = random.randint(5,95)
+                    C = random.randint(5,95)
+                    D = random.randint(5,95)
+                    if wylosowane_pytanie[5]=='A':
+                        while A<=B or A<=C or A<=D:
+                            A = random.randint(5,95)
+                            B = random.randint(5,95)
+                            C = random.randint(5,95)
+                            D = random.randint(5,95)
+                    elif wylosowane_pytanie[5]=='B':
+                        while B<=A or B<=C or B<=D:
+                            A = random.randint(5,95)
+                            B = random.randint(5,95)
+                            C = random.randint(5,95)
+                            D = random.randint(5,95)
+                    elif wylosowane_pytanie[5]=='C':
+                        while C<=B or C<=A or C<=D:
+                            A = random.randint(5,95)
+                            B = random.randint(5,95)
+                            C = random.randint(5,95)
+                            D = random.randint(5,95)
+                    elif wylosowane_pytanie[5]=='D':
+                        while D<=B or D<=C or D<=A:
+                            A = random.randint(5,95)
+                            B = random.randint(5,95)
+                            C = random.randint(5,95)
+                            D = random.randint(5,95)
+                print(A, B, C, D)
+                kolo_ratunkowe.remove('2. Pytanie do publiczności')
+            elif ktore_kolo == '3':
+                if wylosowane_pytanie[5] in odp:
+                    odp.remove(wylosowane_pytanie[5])
+                print('\nProszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:',wylosowane_pytanie[5],'i',random.choice(odp))
+                print()
+                kolo_ratunkowe.remove('3. 50:50')
         ilosc_kol -= 1
         print('Pamiętaj - ilość pozostałych kół ratunkowych to:', ilosc_kol)    
     time.sleep(1)
