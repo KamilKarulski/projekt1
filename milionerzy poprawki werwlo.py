@@ -78,15 +78,12 @@ while True:
     elif ilosc_pytan >4 and ilosc_pytan <8:
         wylosowane_pytanie = random.choice(zestaw_pytan_2) #kiedy gracz odpowiedział poprawnie na 4 pierwsze pytania losuje z drugiegoo zestawu
         zestaw_pytan_2.remove(wylosowane_pytanie)
-    elif  ilosc_pytan >8 and ilosc_pytan <12:
+    elif  ilosc_pytan >8 and ilosc_pytan <=12:
         wylosowane_pytanie = random.choice(zestaw_pytan_3)
         zestaw_pytan_3.remove(wylosowane_pytanie)
-    elif ilosc_pytan == 12:
-        wylosowane_pytanie = random.choice(zestaw_pytan_3)
-        zestaw_pytan_3.remove(wylosowane_pytanie)
-        time.sleep(1)
-        print("GRATULACJE!\nWYGRAŁEŚ 1 000 000 ZŁOTYCH!")
-        break
+        if ilosc_pytan == 12:
+            print("GRATULACJE!\nWYGRAŁEŚ 1 000 000 ZŁOTYCH!")
+            break
     print(wylosowane_pytanie[0]) #numer listy zagnieżdzonej wybrany, 1 element ponieważ chcemy wyświetlić tylko pytanie
     print(wylosowane_pytanie[1],wylosowane_pytanie[2],wylosowane_pytanie[3],wylosowane_pytanie[4]) #teraz wyswietlamy odpowiedzi
     wygrana = lista_wygrane[0] # pierwszy element w liscie z sianem xd
@@ -162,7 +159,6 @@ while True:
         lista_wygrane.remove(wygrana) #usuwamy z listy z sianem pierwszy element, aby nastepnym razem pokazywalo kolejna wygraną
         ilosc_pytan = ilosc_pytan+1 #dodaje jeden aby python wiedzial ze juz na jedno pytanie byla udzieelona odp, kiedy dojdzie do 4 a potem do 8 bd losowalo z kolejnych list
         print(random.choice(prowadzacy),"\n")
-        print('Oto kolejne pytanie:') #petla leci od poczatku
     else:
         print("Niestety, odpowiedź której udzieliłeś była niewłaściwa. Poprawna odpowiedź to",wylosowane_pytanie[5])
         if ilosc_pytan>3:
