@@ -93,15 +93,15 @@ poprawna=['Dobra odpowiedź! Grasz dalej.','Niestety, jest to...poprawna odpowie
 ilosc_pytan = 0 #ilość pytań na które gracz do tej pory odpowiedzial, na poczatku musi byc 0
 
 while True:
-    if ilosc_pytan <4:
+    if ilosc_pytan < 4:
         print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_1) #dopóki gracz nie odpowiedział poprawnie na 4 pierwsze pytania losuje z pierwszego zestawu
         zestaw_pytan_1.remove(wylosowane_pytanie)
-    elif ilosc_pytan >4 and ilosc_pytan <8:
+    elif ilosc_pytan >= 4 and ilosc_pytan < 8:
         print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_2) #kiedy gracz odpowiedział poprawnie na 4 pierwsze pytania losuje z drugiegoo zestawu
         zestaw_pytan_2.remove(wylosowane_pytanie)
-    elif  ilosc_pytan >8 and ilosc_pytan <=12:
+    elif  ilosc_pytan >= 8 and ilosc_pytan <= 12:
         print(random.choice(prowadzacy),"\n")
         wylosowane_pytanie = random.choice(zestaw_pytan_3)
         zestaw_pytan_3.remove(wylosowane_pytanie)
