@@ -1,11 +1,14 @@
 ### milionerzy
 import time
 import random
-
+from colorama import init
+from termcolor import colored
+init()
 ilosc_kol = 3
 odp=['A','B','C','D']
 prawdopodobien2 = random.randint(50,100)
 p2=round(prawdopodobien2,2)
+szerokosc = 21
 
 kolo_ratunkowe = ['1. Telefon do przyjaciela','2. Pytanie do publiczności','3. 50:50']
 czy_chce_kolo_ratunkowe = 'Jeżeli chcesz skorzystać z koła ratunkowego, wciśnij "q" i ENTER. Jeżeli nie, wciśnij ENTER, aby kontynuować. '
@@ -17,7 +20,7 @@ prowadzacy = ['Dobrze Ci idzie!','Świetnie, oby tak dalej.','W takim tempie zar
 print("Witaj w grze")
 print()
 time.sleep(1)
-print("\t$   $  $$$  $     $$$   $$$   $   $  $$$$  $$$$   $$$$$  $   $\n\t$$ $$   $   $      $   $   $  $$  $  $     $   $     $    $ $ \n\t$ $ $   $   $      $   $   $  $ $ $  $$$   $$$$     $      $ \n\t$   $   $   $      $   $   $  $  $$  $     $ $     $       $\n\t$   $  $$$  $$$$  $$$   $$$   $   $  $$$$  $  $$  $$$$$    $")
+print(colored("\t$   $  $$$  $     $$$   $$$   $   $  $$$$  $$$$   $$$$$  $   $\n\t$$ $$   $   $      $   $   $  $$  $  $     $   $     $    $ $ \n\t$ $ $   $   $      $   $   $  $ $ $  $$$   $$$$     $      $ \n\t$   $   $   $      $   $   $  $  $$  $     $ $     $       $\n\t$   $  $$$  $$$$  $$$   $$$   $   $  $$$$  $  $$  $$$$$    $","yellow"))
 print()
 print("Wciśnij ENTER, aby kontynuować.")
 kontynuuj = str(input())
@@ -27,9 +30,26 @@ time.sleep(1)
 print('Wszystkie pytania mają 4 możliwe odpowiedzi - A, B, C, D.')
 time.sleep(2)
 print('W razie zwątpienia, do Twojej dyspozycji są 3 koła ratunkowe:',kolo_ratunkowe[0], kolo_ratunkowe[1], kolo_ratunkowe[2])
+print(colored('          0\              o   O   o            -------  ','green'))
+print(colored('           ))            /|\ /|\ /|\         ( 50 : 50 )','green'))
+print(colored('          0/                 / \               -------  ','green'))
 time.sleep(3)
 print()
 print('W grze istnieją 2 progi kwoty gwarantowanej - 5 000 i 75 000.\nOznacza to tyle, że nawet jeżeli ne dotrzesz do końca rozgrywki, możesz wrócić do domu z pieniędzmi.')
+print('-'*szerokosc)
+print(colored('| 12    1 000 000zł |','magenta'))
+print('| 11      500 000zł |')
+print('| 10      250 000zł |')
+print('|  9      125 000zł |')
+print('|  8       75 000zł |')
+print(colored('|  7       40 000zł |','blue'))
+print('|  6       20 000zł |')
+print('|  5       10 000zł |')
+print('|  4        5 000zł |')
+print('|  3        2 000zł |')
+print(colored('|  2        1 000zł |','blue'))
+print('|  1          500zł |')
+print('-'*szerokosc)
 time.sleep(3)
 print()
 print('Gotowy/a?\nA więc zaczynajmy! Przypominam: gra toczy się o milion złotych.')
